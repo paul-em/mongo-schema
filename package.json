@@ -18,6 +18,9 @@
       "type": "MIT"
     }
   ],
+  "scripts": {
+    "test": "mocha -R spec"
+  },
   "devDependencies": {
     "gulp": "~3.3.2",
     "gulp-util": "~2.2.9",
