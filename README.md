@@ -58,7 +58,7 @@ var numberSchema = {
 
   it("should leave only success and converted numbers and return no errors", function (done) {
     var data = _.clone(numberSchemaTest);
-    var errs = schema(data, numberSchema);
+    var errs = schema.check(data, numberSchema);
     assert.strictEqual(errs.length, 0);
     assert.strictEqual(data.successTestNumber1, 123);
     assert.strictEqual(data.successTestNumber2, 123);
