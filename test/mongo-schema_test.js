@@ -57,8 +57,9 @@ var numberSchemaMinMax = {
 
 describe("testNumberSchema", function () {
   it("should leave only success and converted numbers and return no errors", function (done) {
-    var data = _.clone(numberSchemaTest);
-    var errs = schema.check(data, numberSchema);
+    var re = schema.check(numberSchemaTest, numberSchema);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 0);
     assert.strictEqual(data.successTestNumber1, 123);
     assert.strictEqual(data.successTestNumber2, 123);
@@ -74,8 +75,9 @@ describe("testNumberSchema", function () {
   });
 
   it("should return errors where and tell me required fields shoule be set", function (done) {
-    var data = _.clone(numberSchemaTest);
-    var errs = schema.check(data, numberSchemaReq);
+    var re = schema.check(numberSchemaTest, numberSchemaReq);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 7);
     assert.equal(errs[0].toLowerCase().indexOf("required") !== -1, true);
     assert.strictEqual(data.successTestNumber1, 123);
@@ -92,8 +94,9 @@ describe("testNumberSchema", function () {
   });
 
   it("should return min max errors", function (done) {
-    var data = _.clone(numberSchemaTest);
-    var errs = schema.check(data, numberSchemaMinMax);
+    var re = schema.check(numberSchemaTest, numberSchemaMinMax);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 2);
     assert.equal(errs[0].toLowerCase().indexOf("min") !== -1, true);
     assert.equal(errs[1].toLowerCase().indexOf("max") !== -1, true);
@@ -162,8 +165,9 @@ var stringSchemaRegex = {
 
 describe("testStringSchema", function () {
   it("should leave only success and converted strings and return no errors", function (done) {
-    var data = _.clone(stringSchemaTest);
-    var errs = schema.check(data, stringSchema);
+    var re = schema.check(stringSchemaTest, stringSchema);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 0);
     assert.strictEqual(data.successTestString1, "Hellow");
     assert.strictEqual(data.successTestString2, "asdf  asdfasdf ekjk3df*()^&%^$%");
@@ -178,8 +182,9 @@ describe("testStringSchema", function () {
   });
 
   it("should return errors where and tell me required fields shoule be set", function (done) {
-    var data = _.clone(stringSchemaTest);
-    var errs = schema.check(data, stringSchemaReq);
+    var re = schema.check(stringSchemaTest, stringSchemaReq);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 6);
     assert.equal(errs[0].toLowerCase().indexOf("required") !== -1, true);
     assert.strictEqual(data.successTestString1, "Hellow");
@@ -195,8 +200,9 @@ describe("testStringSchema", function () {
   });
 
   it("should return min max errors", function (done) {
-    var data = _.clone(stringSchemaTest);
-    var errs = schema.check(data, stringSchemaMinMax);
+    var re = schema.check(stringSchemaTest, stringSchemaMinMax);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 2);
     assert.equal(errs[0].toLowerCase().indexOf("minlength") !== -1, true);
     assert.equal(errs[1].toLowerCase().indexOf("maxlength") !== -1, true);
@@ -207,8 +213,9 @@ describe("testStringSchema", function () {
   });
 
   it("should correctly detect regexes", function (done) {
-    var data = _.clone(stringSchemaTest);
-    var errs = schema.check(data, stringSchemaRegex);
+    var re = schema.check(stringSchemaTest, stringSchemaRegex);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 1);
     assert.equal(errs[0].toLowerCase().indexOf("regex") !== -1, true);
     assert.strictEqual(data.successTestString1, "Hellow");
@@ -260,8 +267,9 @@ var boolSchemaReq = {
 
 describe("testBoolSchema", function () {
   it("should leave only success and converted booleans and return no errors", function (done) {
-    var data = _.clone(boolSchemaTest);
-    var errs = schema.check(data, boolSchema);
+    var re = schema.check(boolSchemaTest, boolSchema);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 0);
     assert.strictEqual(data.successTestBool1, true);
     assert.strictEqual(data.successTestBool2, false);
@@ -278,8 +286,9 @@ describe("testBoolSchema", function () {
 
 
   it("should leave only success and converted booleans and return no errors", function (done) {
-    var data = _.clone(boolSchemaTest);
-    var errs = schema.check(data, boolSchemaReq);
+    var re = schema.check(boolSchemaTest, boolSchemaReq);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 2);
     assert.strictEqual(errs[0].toLowerCase().indexOf("required") !== -1, true);
     assert.strictEqual(data.successTestBool1, true);
@@ -332,8 +341,9 @@ var objectIdSchemaReq = {
 
 describe("testObjectIdSchema", function () {
   it("should leave only success and converted objectId and return no errors", function (done) {
-    var data = _.clone(objectIdSchemaTest);
-    var errs = schema.check(data, objectIdSchema);
+    var re = schema.check(objectIdSchemaTest, objectIdSchema);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 0);
     assert.strictEqual(data.successTestObjectId1, "529c3acb044bdcc93700006f");
     assert.strictEqual(data.hasOwnProperty("failTestObjectId1"), false);
@@ -348,8 +358,9 @@ describe("testObjectIdSchema", function () {
 
 
   it("should leave only success and converted objectIdeans and return no errors", function (done) {
-    var data = _.clone(objectIdSchemaTest);
-    var errs = schema.check(data, objectIdSchemaReq);
+    var re = schema.check(objectIdSchemaTest, objectIdSchemaReq);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 7);
     assert.strictEqual(errs[0].toLowerCase().indexOf("required") !== -1, true);
     assert.strictEqual(data.successTestObjectId1, "529c3acb044bdcc93700006f");
@@ -412,8 +423,9 @@ var dateSchemaReq = {
 
 describe("testDateSchema", function () {
   it("should leave only success and converted date and return no errors", function (done) {
-    var data = _.clone(dateSchemaTest);
-    var errs = schema.check(data, dateSchema);
+    var re = schema.check(dateSchemaTest, dateSchema);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 0);
     assert.strictEqual(data.successTestDate1, 1390528951);
     assert.strictEqual(data.successTestDate2, 1390528951);
@@ -432,8 +444,9 @@ describe("testDateSchema", function () {
 
 
   it("should leave only success and converted date and return no errors", function (done) {
-    var data = _.clone(dateSchemaTest);
-    var errs = schema.check(data, dateSchemaReq);
+    var re = schema.check(dateSchemaTest, dateSchemaReq);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 7);
     assert.strictEqual(errs[0].toLowerCase().indexOf("required") !== -1, true);
     assert.strictEqual(data.successTestDate1, 1390528951);
@@ -490,8 +503,9 @@ var collectionSchemaReq = {
 
 describe("testCollectionSchema", function () {
   it("should leave only success and converted date and return no errors", function (done) {
-    var data = _.clone(collectionSchemaTest);
-    var errs = schema.check(data, collectionSchema);
+    var re = schema.check(collectionSchemaTest, collectionSchema);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 0);
     assert.strictEqual(data.collection[0].test, 123);
     assert.strictEqual(data.collection[0].test1, "asdf");
@@ -503,8 +517,9 @@ describe("testCollectionSchema", function () {
   });
 
   it("should leave only success and converted date and return no errors", function (done) {
-    var data = _.clone(collectionSchemaTest);
-    var errs = schema.check(data, collectionSchemaReq);
+    var re = schema.check(collectionSchemaTest, collectionSchemaReq);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 2);
     assert.strictEqual(errs[0].toLowerCase().indexOf("required") !== -1, true);
     assert.strictEqual(errs[1].toLowerCase().indexOf("required") !== -1, true);
@@ -539,8 +554,9 @@ var updateSchemaReq = {
 
 describe("testUpdateSchema", function () {
   it("should ignore wrong formats and return no errors", function (done) {
-    var data = _.clone(updateSchemaTest);
-    var errs = schema.check(data, updateSchema, true);
+    var re = schema.check(updateSchemaTest, updateSchema, true);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 0);
     assert.strictEqual(data.deleteTest, undefined);
     assert.strictEqual(data.hasOwnProperty("deleteTest"), true);
@@ -550,8 +566,9 @@ describe("testUpdateSchema", function () {
   });
 
   it("should warn me of wrong formats for ", function (done) {
-    var data = _.clone(updateSchemaTest);
-    var errs = schema.check(data, updateSchemaReq, true);
+    var re = schema.check(updateSchemaTest, updateSchemaReq, true);
+    var data = re.data;
+    var errs = re.errors;
     assert.strictEqual(errs.length, 3);
     assert.strictEqual(errs[0].toLowerCase().indexOf("required") !== -1, true);
     assert.strictEqual(errs[1].toLowerCase().indexOf("required") !== -1, true);

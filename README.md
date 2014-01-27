@@ -7,9 +7,11 @@ Install the module with: `npm install mongo-schema`
 
 ```javascript
 var mongoSchema = require('mongo-schema');
-var errors = mongoSchema.check(yourDataToCheck, yourSchema);
- if(errors.length === 0){
+var re = mongoSchema.check(yourDataToCheck, yourSchema);
+
+ if(re.errors.length === 0){
   // schema did not throw any errors! YEY!
+  console.log(re.data); // the new data that fits the schema
  } else {
    console.log(errors); // returns where there was an error
  }
@@ -57,20 +59,21 @@ var numberSchema = {
 
 
   it("should leave only success and converted numbers and return no errors", function (done) {
-    var data = _.clone(numberSchemaTest);
-    var errs = schema.check(data, numberSchema);
-    assert.strictEqual(errs.length, 0);
-    assert.strictEqual(data.successTestNumber1, 123);
-    assert.strictEqual(data.successTestNumber2, 123);
-    assert.strictEqual(data.convertTestNumber, 456);
-    assert.strictEqual(data.hasOwnProperty("failTestNumber1"), false);
-    assert.strictEqual(data.hasOwnProperty("failTestNumber2"), false);
-    assert.strictEqual(data.hasOwnProperty("failTestNumber3"), false);
-    assert.strictEqual(data.hasOwnProperty("failTestNumber4"), false);
-    assert.strictEqual(data.hasOwnProperty("failTestNumber5"), false);
-    assert.strictEqual(data.hasOwnProperty("failTestNumber6"), false);
-    assert.strictEqual(data.hasOwnProperty("failTestNumber7"), false);
-    done();
+      var re = schema.check(numberSchemaTest, numberSchema);
+      var data = re.data;
+      var errs = re.errors;
+      assert.strictEqual(errs.length, 0);
+      assert.strictEqual(data.successTestNumber1, 123);
+      assert.strictEqual(data.successTestNumber2, 123);
+      assert.strictEqual(data.convertTestNumber, 456);
+      assert.strictEqual(data.hasOwnProperty("failTestNumber1"), false);
+      assert.strictEqual(data.hasOwnProperty("failTestNumber2"), false);
+      assert.strictEqual(data.hasOwnProperty("failTestNumber3"), false);
+      assert.strictEqual(data.hasOwnProperty("failTestNumber4"), false);
+      assert.strictEqual(data.hasOwnProperty("failTestNumber5"), false);
+      assert.strictEqual(data.hasOwnProperty("failTestNumber6"), false);
+      assert.strictEqual(data.hasOwnProperty("failTestNumber7"), false);
+      done();
   });
 ```
 
