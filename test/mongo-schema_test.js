@@ -569,10 +569,9 @@ describe("testUpdateSchema", function () {
         var re = schema.check(updateSchemaTest, updateSchemaReq, true);
         var data = re.data;
         var errs = re.errors;
-        assert.strictEqual(errs.length, 3);
+        assert.strictEqual(errs.length, 2);
         assert.strictEqual(errs[0].toLowerCase().indexOf("required") !== -1, true);
         assert.strictEqual(errs[1].toLowerCase().indexOf("required") !== -1, true);
-        assert.strictEqual(errs[2].toLowerCase().indexOf("required") !== -1, true);
         assert.strictEqual(data.hasOwnProperty("deleteTest"), false);
         assert.strictEqual(data.hasOwnProperty("deleteTest2"), false);
         assert.strictEqual(data.hasOwnProperty("deleteTest3"), false);
