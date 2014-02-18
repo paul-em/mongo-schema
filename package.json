@@ -1,6 +1,6 @@
 {
   "name": "mongo-schema",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "main": "lib/mongo-schema.js",
   "description": "Basic schema for mongodb",
   "homepage": "https://github.com/paul-em/mongo-schema",
