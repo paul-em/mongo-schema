@@ -501,6 +501,7 @@ var collectionSchemaReq = {
     ]
 };
 
+
 describe("testCollectionSchema", function () {
     it("should leave only success and converted date and return no errors", function (done) {
         var re = schema.check(collectionSchemaTest, collectionSchema);
@@ -661,4 +662,48 @@ describe("testDefaultSchema", function () {
         assert.strictEqual(defaults.defaultObjGiven.defaultNumber, 17);
         done();
     });
+});
+
+
+var updateSchemaCollection = {
+    b: [
+        {
+            c: [
+                {
+                    d: 'Number',
+                    e: 'Number',
+                    f: 'String'
+                }
+            ]
+        }
+    ]
+};
+
+
+var updateSchemaData = {
+    "b": {
+        "8": {
+            "c": {
+                "5": {
+                    "d": 3
+                }
+            }
+        }
+    }
+};
+
+
+describe("updateSchemaCollection", function () {
+    it("should ignore wrong type and return no errors", function (done) {
+        var re = schema.check(updateSchemaData, updateSchemaCollection, true);
+        var data = re.data;
+        var errs = re.errors;
+        assert.strictEqual(errs.length, 0);
+        assert.strictEqual(typeof data.b, "object");
+        assert.strictEqual(data.b.length, 9);
+        assert.strictEqual(typeof data.b[8], "object");
+        assert.strictEqual(data.b[7], undefined);
+        assert.strictEqual(data.b[8].c[5].d, 3);
+        done();
+    })
 });
