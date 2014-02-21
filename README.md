@@ -1,6 +1,6 @@
 # mongo-schema [![Build Status](https://secure.travis-ci.org/paul-em/mongo-schema.png?branch=master)](http://travis-ci.org/paul-em/mongo-schema)
 
-Basic schema for mongodb. Can be used on server and client!
+Basic schema for mongodb. Can be used on server and client! NOT STABLE YET!!!
 
 ## Getting Started
 Install the module with: `npm install mongo-schema`
