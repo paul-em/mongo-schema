@@ -581,85 +581,85 @@ describe("testUpdateSchema", function () {
 });
 
 
-var defaultSchema = {
-    defaultStr: String,
-    defaultNumber: Number,
-    defaultBoolean: Boolean,
-    defaultObjectId: "ObjectId",
-    defaultDate: Date,
-    defaultCollection: [
+var defSchema = {
+    defStr: String,
+    defNumber: Number,
+    defBoolean: Boolean,
+    defObjectId: "ObjectId",
+    defDate: Date,
+    defCollection: [
         {val: String}
     ],
-    defaultObj: {
-        defaultNumber: Number
+    defObj: {
+        defNumber: Number
     },
-    defaultStrReq: { type: String, required: true },
-    defaultNumberReq: { type: Number, required: true },
-    defaultBooleanReq: { type: Boolean, required: true },
-    defaultObjectIdReq: { type: "ObjectId", required: true },
-    defaultDateReq: { type: Date, required: true },
-    defaultCollectionReq: [
+    defStrReq: { type: String, required: true },
+    defNumberReq: { type: Number, required: true },
+    defBooleanReq: { type: Boolean, required: true },
+    defObjectIdReq: { type: "ObjectId", required: true },
+    defDateReq: { type: Date, required: true },
+    defCollectionReq: [
         {val: { type: String, required: true }}
     ],
-    defaultObjReq: {
-        defaultNumber: { type: Number, required: true }
+    defObjReq: {
+        defNumber: { type: Number, required: true }
     },
-    defaultStrGiven: { type: String, default: "Given" },
-    defaultNumberGiven: { type: Number, default: 17 },
-    defaultBooleanGiven: { type: Boolean, default: true },
-    defaultObjectIdGiven: { type: "ObjectId", default: "5282da0c1341462d029f608e" },
-    defaultDateGiven: { type: Date, default: 946681200 },
-    defaultCollectionGiven: [
-        {val: { type: String, default: "Given" }}
+    defStrGiven: { type: String, def: "Given" },
+    defNumberGiven: { type: Number, def: 17 },
+    defBooleanGiven: { type: Boolean, def: true },
+    defObjectIdGiven: { type: "ObjectId", def: "5282da0c1341462d029f608e" },
+    defDateGiven: { type: Date, def: 946681200 },
+    defCollectionGiven: [
+        {val: { type: String, def: "Given" }}
     ],
-    defaultObjGiven: {
-        defaultNumber: { type: Number, default: 17 }
+    defObjGiven: {
+        defNumber: { type: Number, def: 17 }
     }
 };
 
-describe("testDefaultSchema", function () {
+describe("testdefSchema", function () {
     it("should ignore wrong formats and return no errors", function (done) {
-        var defaults = schema.defaults(defaultSchema);
-        assert.strictEqual(defaults.defaultStr, undefined);
-        assert.strictEqual(defaults.hasOwnProperty("defaultStr"), true);
+        var defs = schema.defs(defSchema);
+        assert.strictEqual(defs.defStr, undefined);
+        assert.strictEqual(defs.hasOwnProperty("defStr"), true);
 
-        assert.strictEqual(defaults.defaultNumber, undefined);
-        assert.strictEqual(defaults.hasOwnProperty("defaultNumber"), true);
+        assert.strictEqual(defs.defNumber, undefined);
+        assert.strictEqual(defs.hasOwnProperty("defNumber"), true);
 
-        assert.strictEqual(defaults.defaultBoolean, undefined);
-        assert.strictEqual(defaults.hasOwnProperty("defaultBoolean"), true);
+        assert.strictEqual(defs.defBoolean, undefined);
+        assert.strictEqual(defs.hasOwnProperty("defBoolean"), true);
 
-        assert.strictEqual(defaults.defaultObjectId, undefined);
-        assert.strictEqual(defaults.hasOwnProperty("defaultObjectId"), true);
+        assert.strictEqual(defs.defObjectId, undefined);
+        assert.strictEqual(defs.hasOwnProperty("defObjectId"), true);
 
-        assert.strictEqual(defaults.defaultDate, undefined);
-        assert.strictEqual(defaults.hasOwnProperty("defaultDate"), true);
+        assert.strictEqual(defs.defDate, undefined);
+        assert.strictEqual(defs.hasOwnProperty("defDate"), true);
 
-        assert.strictEqual(typeof defaults.defaultCollection, "object");
-        assert.strictEqual(defaults.defaultCollection.length, 0);
+        assert.strictEqual(typeof defs.defCollection, "object");
+        assert.strictEqual(defs.defCollection.length, 0);
 
-        assert.strictEqual(typeof defaults.defaultObj, "object");
-        assert.strictEqual(defaults.defaultObj.defaultNumber, undefined);
-        assert.strictEqual(defaults.defaultObj.hasOwnProperty("defaultNumber"), true);
+        assert.strictEqual(typeof defs.defObj, "object");
+        assert.strictEqual(defs.defObj.defNumber, undefined);
+        assert.strictEqual(defs.defObj.hasOwnProperty("defNumber"), true);
 
-        assert.strictEqual(defaults.defaultStrReq, "");
-        assert.strictEqual(defaults.defaultNumberReq, 0);
-        assert.strictEqual(defaults.defaultBooleanReq, true);
-        assert.strictEqual(defaults.defaultObjectIdReq, "");
-        assert.strictEqual(Math.abs(Math.round(new Date().getTime() / 1000) - defaults.defaultDateReq) < 5, true);
-        assert.strictEqual(typeof defaults.defaultCollectionReq, "object");
-        assert.strictEqual(defaults.defaultCollectionReq.length, 0);
-        assert.strictEqual(typeof defaults.defaultObjReq, "object");
-        assert.strictEqual(defaults.defaultObjReq.defaultNumber, 0);
+        assert.strictEqual(defs.defStrReq, "");
+        assert.strictEqual(defs.defNumberReq, 0);
+        assert.strictEqual(defs.defBooleanReq, true);
+        assert.strictEqual(defs.defObjectIdReq, "");
+        assert.strictEqual(Math.abs(Math.round(new Date().getTime() / 1000) - defs.defDateReq) < 5, true);
+        assert.strictEqual(typeof defs.defCollectionReq, "object");
+        assert.strictEqual(defs.defCollectionReq.length, 0);
+        assert.strictEqual(typeof defs.defObjReq, "object");
+        assert.strictEqual(defs.defObjReq.defNumber, 0);
 
-        assert.strictEqual(defaults.defaultStrGiven, "Given");
-        assert.strictEqual(defaults.defaultNumberGiven, 17);
-        assert.strictEqual(defaults.defaultBooleanGiven, true);
-        assert.strictEqual(defaults.defaultObjectIdGiven, "5282da0c1341462d029f608e");
-        assert.strictEqual(defaults.defaultDateGiven, 946681200);
-        assert.strictEqual(defaults.defaultCollectionGiven.length, 0);
-        assert.strictEqual(typeof defaults.defaultObjGiven, "object");
-        assert.strictEqual(defaults.defaultObjGiven.defaultNumber, 17);
+        assert.strictEqual(defs.defStrGiven, "Given");
+        assert.strictEqual(defs.defNumberGiven, 17);
+        assert.strictEqual(defs.defBooleanGiven, true);
+        assert.strictEqual(defs.defObjectIdGiven, "5282da0c1341462d029f608e");
+        assert.strictEqual(defs.defDateGiven, 946681200);
+        assert.strictEqual(defs.defCollectionGiven.length, 0);
+        assert.strictEqual(typeof defs.defObjGiven, "object");
+        assert.strictEqual(defs.defObjGiven.defNumber, 17);
         done();
     });
 });
