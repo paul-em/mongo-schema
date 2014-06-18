@@ -15,43 +15,43 @@ var numberSchemaTest = {
 };
 
 var numberSchema = {
-    successTestNumber1: Number,
-    successTestNumber2: Number,
-    convertTestNumber: Number,
-    failTestNumber1: Number,
-    failTestNumber2: Number,
-    failTestNumber3: Number,
-    failTestNumber4: Number,
-    failTestNumber5: Number,
-    failTestNumber6: Number,
-    failTestNumber7: Number
+    successTestNumber1: "Number",
+    successTestNumber2: "Number",
+    convertTestNumber: "Number",
+    failTestNumber1: "Number",
+    failTestNumber2: "Number",
+    failTestNumber3: "Number",
+    failTestNumber4: "Number",
+    failTestNumber5: "Number",
+    failTestNumber6: "Number",
+    failTestNumber7: "Number"
 };
 
 
 var numberSchemaReq = {
-    successTestNumber1: {type: Number, required: true},
-    successTestNumber2: {type: Number, required: true},
-    convertTestNumber: {type: Number, required: true},
-    failTestNumber1: {type: Number, required: true},
-    failTestNumber2: {type: Number, required: true},
-    failTestNumber3: {type: Number, required: true},
-    failTestNumber4: {type: Number, required: true},
-    failTestNumber5: {type: Number, required: true},
-    failTestNumber6: {type: Number, required: true},
-    failTestNumber7: {type: Number, required: true}
+    successTestNumber1: {type: "Number", required: true},
+    successTestNumber2: {type: "Number", required: true},
+    convertTestNumber: {type: "Number", required: true},
+    failTestNumber1: {type: "Number", required: true},
+    failTestNumber2: {type: "Number", required: true},
+    failTestNumber3: {type: "Number", required: true},
+    failTestNumber4: {type: "Number", required: true},
+    failTestNumber5: {type: "Number", required: true},
+    failTestNumber6: {type: "Number", required: true},
+    failTestNumber7: {type: "Number", required: true}
 };
 
 var numberSchemaMinMax = {
-    successTestNumber1: {type: Number, required: true, min: 124},
-    successTestNumber2: {type: Number, required: true, max: 122},
-    convertTestNumber: {type: Number, required: true},
-    failTestNumber1: Number,
-    failTestNumber2: Number,
-    failTestNumber3: Number,
-    failTestNumber4: Number,
-    failTestNumber5: Number,
-    failTestNumber6: Number,
-    failTestNumber7: Number
+    successTestNumber1: {type: "Number", required: true, min: 124},
+    successTestNumber2: {type: "Number", required: true, max: 122},
+    convertTestNumber: {type: "Number", required: true},
+    failTestNumber1: "Number",
+    failTestNumber2: "Number",
+    failTestNumber3: "Number",
+    failTestNumber4: "Number",
+    failTestNumber5: "Number",
+    failTestNumber6: "Number",
+    failTestNumber7: "Number"
 };
 
 
@@ -127,39 +127,39 @@ var stringSchemaTest = {
 };
 
 var stringSchema = {
-    successTestString1: String,
-    successTestString2: String,
-    convertTestString: String,
-    failTestString1: String,
-    failTestString2: String,
-    failTestString3: String,
-    failTestString4: String,
-    failTestString5: String,
-    failTestString6: String
+    successTestString1: "String",
+    successTestString2: "String",
+    convertTestString: "String",
+    failTestString1: "String",
+    failTestString2: "String",
+    failTestString3: "String",
+    failTestString4: "String",
+    failTestString5: "String",
+    failTestString6: "String"
 };
 
 var stringSchemaReq = {
-    successTestString1: {type: String, required: true},
-    successTestString2: {type: String, required: true},
-    convertTestString: {type: String, required: true},
-    failTestString1: {type: String, required: true},
-    failTestString2: {type: String, required: true},
-    failTestString3: {type: String, required: true},
-    failTestString4: {type: String, required: true},
-    failTestString5: {type: String, required: true},
-    failTestString6: {type: String, required: true}
+    successTestString1: {type: "String", required: true},
+    successTestString2: {type: "String", required: true},
+    convertTestString: {type: "String", required: true},
+    failTestString1: {type: "String", required: true},
+    failTestString2: {type: "String", required: true},
+    failTestString3: {type: "String", required: true},
+    failTestString4: {type: "String", required: true},
+    failTestString5: {type: "String", required: true},
+    failTestString6: {type: "String", required: true}
 };
 
 var stringSchemaMinMax = {
-    successTestString1: {type: String, required: true, minLength: 10},
-    successTestString2: {type: String, required: true, maxLength: 10},
-    convertTestString: {type: String, required: true, maxLength: 10}
+    successTestString1: {type: "String", required: true, minLength: 10},
+    successTestString2: {type: "String", required: true, maxLength: 10},
+    convertTestString: {type: "String", required: true, maxLength: 10}
 };
 
 var stringSchemaRegex = {
-    successTestString1: {type: String, required: true, regex: /Hellow/ig},
-    successTestString2: {type: String, required: true, regex: /NOTINSIDE/g},
-    convertTestString: {type: String, required: true, maxLength: /34/g}
+    successTestString1: {type: "String", required: true, regex: /Hellow/ig},
+    successTestString2: {type: "String", required: true, regex: /NOTINSIDE/g},
+    convertTestString: {type: "String", required: true, maxLength: /34/g}
 };
 
 
@@ -239,29 +239,29 @@ var boolSchemaTest = {
 };
 
 var boolSchema = {
-    successTestBool1: Boolean,
-    successTestBool2: Boolean,
-    convertTestBool1: Boolean,
-    convertTestBool2: Boolean,
-    convertTestBool3: Boolean,
-    convertTestBool4: Boolean,
-    convertTestBool5: Boolean,
-    convertTestBool6: Boolean,
-    failTestBool1: Boolean,
-    failTestBool2: Boolean
+    successTestBool1: "Boolean",
+    successTestBool2: "Boolean",
+    convertTestBool1: "Boolean",
+    convertTestBool2: "Boolean",
+    convertTestBool3: "Boolean",
+    convertTestBool4: "Boolean",
+    convertTestBool5: "Boolean",
+    convertTestBool6: "Boolean",
+    failTestBool1: "Boolean",
+    failTestBool2: "Boolean"
 };
 
 var boolSchemaReq = {
-    successTestBool1: {type: Boolean, required: true},
-    successTestBool2: {type: Boolean, required: true},
-    convertTestBool1: {type: Boolean, required: true},
-    convertTestBool2: {type: Boolean, required: true},
-    convertTestBool3: {type: Boolean, required: true},
-    convertTestBool4: {type: Boolean, required: true},
-    convertTestBool5: {type: Boolean, required: true},
-    convertTestBool6: {type: Boolean, required: true},
-    failTestBool1: {type: Boolean, required: true},
-    failTestBool2: {type: Boolean, required: true}
+    successTestBool1: {type: "Boolean", required: true},
+    successTestBool2: {type: "Boolean", required: true},
+    convertTestBool1: {type: "Boolean", required: true},
+    convertTestBool2: {type: "Boolean", required: true},
+    convertTestBool3: {type: "Boolean", required: true},
+    convertTestBool4: {type: "Boolean", required: true},
+    convertTestBool5: {type: "Boolean", required: true},
+    convertTestBool6: {type: "Boolean", required: true},
+    failTestBool1: {type: "Boolean", required: true},
+    failTestBool2: {type: "Boolean", required: true}
 };
 
 
@@ -391,33 +391,33 @@ var dateSchemaTest = {
 };
 
 var dateSchema = {
-    successTestDate1: Date,
-    successTestDate2: Date,
-    successTestDate3: Date,
-    successTestDate4: Date,
-    successTestDate5: Date,
-    failTestDate1: Date,
-    failTestDate2: Date,
-    failTestDate3: Date,
-    failTestDate4: Date,
-    failTestDate5: Date,
-    failTestDate6: Date,
-    failTestDate7: Date
+    successTestDate1: "Date",
+    successTestDate2: "Date",
+    successTestDate3: "Date",
+    successTestDate4: "Date",
+    successTestDate5: "Date",
+    failTestDate1: "Date",
+    failTestDate2: "Date",
+    failTestDate3: "Date",
+    failTestDate4: "Date",
+    failTestDate5: "Date",
+    failTestDate6: "Date",
+    failTestDate7: "Date"
 };
 
 var dateSchemaReq = {
-    successTestDate1: {type: Date, required: true},
-    successTestDate2: {type: Date, required: true},
-    successTestDate3: {type: Date, required: true},
-    successTestDate4: {type: Date, required: true},
-    successTestDate5: {type: Date, required: true},
-    failTestDate1: {type: Date, required: true},
-    failTestDate2: {type: Date, required: true},
-    failTestDate3: {type: Date, required: true},
-    failTestDate4: {type: Date, required: true},
-    failTestDate5: {type: Date, required: true},
-    failTestDate6: {type: Date, required: true},
-    failTestDate7: {type: Date, required: true}
+    successTestDate1: {type: "Date", required: true},
+    successTestDate2: {type: "Date", required: true},
+    successTestDate3: {type: "Date", required: true},
+    successTestDate4: {type: "Date", required: true},
+    successTestDate5: {type: "Date", required: true},
+    failTestDate1: {type: "Date", required: true},
+    failTestDate2: {type: "Date", required: true},
+    failTestDate3: {type: "Date", required: true},
+    failTestDate4: {type: "Date", required: true},
+    failTestDate5: {type: "Date", required: true},
+    failTestDate6: {type: "Date", required: true},
+    failTestDate7: {type: "Date", required: true}
 };
 
 
@@ -486,8 +486,8 @@ var collectionSchemaTest = {
 var collectionSchema = {
     collection: [
         {
-            test: Number,
-            test1: String
+            test: "Number",
+            test1: "String"
         }
     ]
 };
@@ -495,8 +495,8 @@ var collectionSchema = {
 var collectionSchemaReq = {
     collection: [
         {
-            test: {type: Number, required: true},
-            test1: {type: String, required: true}
+            test: {type: "Number", required: true},
+            test1: {type: "String", required: true}
         }
     ]
 };
@@ -542,15 +542,15 @@ var updateSchemaTest = {
 };
 
 var updateSchema = {
-    deleteTest: String,
-    deleteTest2: String,
-    deleteTest3: String
+    deleteTest: "String",
+    deleteTest2: "String",
+    deleteTest3: "String"
 };
 
 var updateSchemaReq = {
-    deleteTest: {type: String, required: true},
-    deleteTest2: {type: String, required: true},
-    deleteTest3: {type: String, required: true}
+    deleteTest: {type: "String", required: true},
+    deleteTest2: {type: "String", required: true},
+    deleteTest3: {type: "String", required: true}
 };
 
 describe("testUpdateSchema", function () {
@@ -582,38 +582,38 @@ describe("testUpdateSchema", function () {
 
 
 var defSchema = {
-    defStr: String,
-    defNumber: Number,
-    defBoolean: Boolean,
+    defStr: "String",
+    defNumber: "Number",
+    defBoolean: "Boolean",
     defObjectId: "ObjectId",
-    defDate: Date,
+    defDate: "Date",
     defCollection: [
-        {val: String}
+        {val: "String"}
     ],
     defObj: {
-        defNumber: Number
+        defNumber: "Number"
     },
-    defStrReq: { type: String, required: true },
-    defNumberReq: { type: Number, required: true },
-    defBooleanReq: { type: Boolean, required: true },
+    defStrReq: { type: "String", required: true },
+    defNumberReq: { type: "Number", required: true },
+    defBooleanReq: { type: "Boolean", required: true },
     defObjectIdReq: { type: "ObjectId", required: true },
-    defDateReq: { type: Date, required: true },
+    defDateReq: { type: "Date", required: true },
     defCollectionReq: [
-        {val: { type: String, required: true }}
+        {val: { type: "String", required: true }}
     ],
     defObjReq: {
-        defNumber: { type: Number, required: true }
+        defNumber: { type: "Number", required: true }
     },
-    defStrGiven: { type: String, def: "Given" },
-    defNumberGiven: { type: Number, def: 17 },
-    defBooleanGiven: { type: Boolean, def: true },
+    defStrGiven: { type: "String", def: "Given" },
+    defNumberGiven: { type: "Number", def: 17 },
+    defBooleanGiven: { type: "Boolean", def: true },
     defObjectIdGiven: { type: "ObjectId", def: "5282da0c1341462d029f608e" },
-    defDateGiven: { type: Date, def: 946681200 },
+    defDateGiven: { type: "Date", def: 946681200 },
     defCollectionGiven: [
-        {val: { type: String, def: "Given" }}
+        {val: { type: "String", def: "Given" }}
     ],
     defObjGiven: {
-        defNumber: { type: Number, def: 17 }
+        defNumber: { type: "Number", def: 17 }
     }
 };
 
