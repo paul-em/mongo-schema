@@ -707,3 +707,30 @@ describe("updateSchemaCollection", function () {
         done();
     })
 });
+
+
+var updateSchemaArray = {
+  a: [
+    'Number'
+  ]
+};
+
+var updateSchemaArrayData = {
+    a: [1,2,3,4,5]
+};
+
+describe("updateSchemaCollection", function () {
+    it("should ignore wrong type and return no errors", function (done) {
+        var re = schema.check(updateSchemaArrayData, updateSchemaArray, true);
+        var data = re.data;
+        var errs = re.errors;
+        console.log(data);
+        assert.strictEqual(errs.length, 0);
+        assert.strictEqual(typeof data.a, "object");
+        assert.strictEqual(data.a.length, 5);
+        assert.strictEqual(typeof data.a[0], "number");
+        assert.strictEqual(data.a[0], 1);
+        assert.strictEqual(data.a[4], 5);
+        done();
+    })
+});
