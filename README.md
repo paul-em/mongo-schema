@@ -45,16 +45,16 @@ var numberSchemaTest = {
 };
 
 var numberSchema = {
-  successTestNumber1: Number,
-  successTestNumber2: Number,
-  convertTestNumber: Number,
-  failTestNumber1: Number,
-  failTestNumber2: Number,
-  failTestNumber3: Number,
-  failTestNumber4: Number,
-  failTestNumber5: Number,
-  failTestNumber6: Number,
-  failTestNumber7: Number
+  successTestNumber1: "Number",
+  successTestNumber2: "Number",
+  convertTestNumber: "Number",
+  failTestNumber1: "Number",
+  failTestNumber2: "Number",
+  failTestNumber3: "Number",
+  failTestNumber4: "Number",
+  failTestNumber5: "Number",
+  failTestNumber6: "Number",
+  failTestNumber7: "Number"
 };
 
 
